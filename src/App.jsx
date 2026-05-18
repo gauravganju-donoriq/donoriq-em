@@ -19,7 +19,6 @@ const IconBase = ({ size = 16, color, fill, stroke, style, children, ...rest }) 
 const Circle = (p) => <IconBase {...p}><circle cx="12" cy="12" r="10" /></IconBase>;
 const ArrowUpRight = (p) => <IconBase {...p}><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></IconBase>;
 const ArrowDownRight = (p) => <IconBase {...p}><line x1="7" y1="7" x2="17" y2="17"/><polyline points="17 7 17 17 7 17"/></IconBase>;
-const ChevronRight = (p) => <IconBase {...p}><polyline points="9 18 15 12 9 6"/></IconBase>;
 const FileText = (p) => <IconBase {...p}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></IconBase>;
 const Lock = (p) => <IconBase {...p}><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></IconBase>;
 
@@ -39,6 +38,7 @@ const critical = '#A8312E';
 const warn = '#B8761A';
 const ok = '#3D7A4E';
 const goldLine = '#C4A562';
+const brand = '#964ad0';
 
 // ──────────────────────────────────────────────────────────────
 // Mock data
@@ -564,18 +564,27 @@ export default function App() {
 
       <div style={{ maxWidth: 1400, margin: '0 auto', padding: '36px 28px 24px' }}>
         <div style={{ fontFamily: 'Fraunces, serif', fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: muted, marginBottom: 12 }}>Environmental monitoring · operational view</div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 16 }}>
-          <div>
-            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 44, fontWeight: 400, margin: 0, letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-              Aseptic integrity, <span style={{ fontStyle: 'italic', color: teal }}>in real time</span>.
-            </h1>
-            <p style={{ color: muted, fontSize: 14, marginTop: 12, maxWidth: 680, lineHeight: 1.5 }}>
-              Seven monitoring streams. One operational picture. Patterns surfaced before the next culture confirms them.
-            </p>
-          </div>
-          <div style={{ display: 'flex', gap: 8, alignItems: 'center', fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: muted }}>
-            <span>WK 20 · 2026</span><ChevronRight size={14} />
-          </div>
+        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 44, fontWeight: 400, margin: 0, letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+          Aseptic integrity, <span style={{ fontStyle: 'italic', color: brand }}>in real time</span>.
+        </h1>
+        <p style={{ color: muted, fontSize: 14, marginTop: 12, maxWidth: 680, lineHeight: 1.5 }}>
+          Seven monitoring streams. One operational picture. Patterns surfaced before the next culture confirms them.
+        </p>
+      </div>
+
+      <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 28px' }}>
+        <div style={{ display: 'flex', gap: 0, borderBottom: `1px solid ${line}`, marginBottom: 24, flexWrap: 'wrap' }}>
+          {tabs.map(t => (
+            <button key={t.id} onClick={() => setTab(t.id)} style={{
+              background: 'none', border: 'none',
+              borderBottom: tab === t.id ? `2px solid ${brand}` : '2px solid transparent',
+              padding: '14px 22px', fontSize: 13, fontFamily: 'Geist, system-ui, sans-serif',
+              color: tab === t.id ? brand : muted, fontWeight: tab === t.id ? 500 : 400,
+              cursor: 'pointer', letterSpacing: '0.01em',
+            }}>
+              {t.label}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -585,25 +594,6 @@ export default function App() {
           <Kpi label="Open flags" value="04" delta="1 new · 47m" deltaDir="up" sublabel="from AI patterns" />
           <Kpi label="Sources connected" value="7/7" delta="all live" deltaDir="flat" sublabel="0 stale" />
           <Kpi label="Next AATB review" value="87" unit="d" delta="95/100 ready" deltaDir="down" sublabel="auto-generated" />
-        </div>
-      </div>
-
-      <div style={{ maxWidth: 1400, margin: '0 auto', padding: '0 28px' }}>
-        <div style={{ display: 'flex', gap: 0, borderBottom: `1px solid ${line}`, marginBottom: 20, flexWrap: 'wrap' }}>
-          {tabs.map(t => (
-            <button key={t.id} onClick={() => setTab(t.id)} style={{
-              background: 'none', border: 'none',
-              borderBottom: tab === t.id ? `2px solid ${ink}` : '2px solid transparent',
-              padding: '14px 22px', fontSize: 13, fontFamily: 'Geist, system-ui, sans-serif',
-              color: tab === t.id ? ink : muted, fontWeight: tab === t.id ? 500 : 400,
-              cursor: 'pointer', letterSpacing: '0.01em',
-            }}>
-              {t.label}
-            </button>
-          ))}
-          <div style={{ marginLeft: 'auto', padding: '14px 0', fontSize: 11, color: fade, fontFamily: 'JetBrains Mono, monospace' }}>
-            v0.9.1 · build 2026.05.18
-          </div>
         </div>
       </div>
 
