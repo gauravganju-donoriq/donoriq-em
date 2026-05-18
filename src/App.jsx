@@ -629,10 +629,6 @@ export default function App() {
         {tab === 'reports' && <ReportsTab />}
       </div>
 
-      <div style={{ maxWidth: 1400, margin: '40px auto 0', padding: '24px 28px', borderTop: `1px solid ${line}`, display: 'flex', justifyContent: 'space-between', fontSize: 10, color: fade, fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.05em', flexWrap: 'wrap', gap: 8 }}>
-          <span>DONORIQ EM · BY IGNITEC · CONFIDENTIAL DESIGN-PARTNER PREVIEW</span>
-          <span>FDA 21 CFR 1271 · AATB · AABB · ISO 14644 aligned</span>
-      </div>
     </div>
   );
 }
