@@ -553,27 +553,12 @@ export default function App() {
   return (
     <div style={{ background: bg, minHeight: '100vh', color: ink, paddingBottom: 40 }}>
       <div style={{ background: ink, color: '#fff' }}>
-        <div style={{ maxWidth: 1400, margin: '0 auto', padding: '14px 28px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, letterSpacing: '-0.01em', fontWeight: 500, display: 'flex', alignItems: 'center', gap: 10 }}>
-              <img
-                src="/donoriq-logo.svg"
-                alt="DonorIQ"
-                style={{ height: 26, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }}
-              />
-              <span style={{ color: goldLine, alignSelf: 'baseline' }}>·</span>
-              <span style={{ fontStyle: 'italic', fontWeight: 400, alignSelf: 'baseline' }}>EM</span>
-              <span style={{ fontSize: 10, color: '#9BA8B8', fontFamily: 'JetBrains Mono, monospace', fontStyle: 'normal', letterSpacing: '0.1em', marginLeft: 4, alignSelf: 'baseline' }}>BY IGNITEC</span>
-            </div>
-            <div style={{ height: 16, width: 1, background: '#ffffff22' }} />
-            <div style={{ fontSize: 11, color: '#9BA8B8', fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.05em' }}>
-              7 SOURCES · 12 SUITES · 247 SENSORS
-            </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 18, fontSize: 11, color: '#9BA8B8', fontFamily: 'JetBrains Mono, monospace' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: 6 }}><Circle size={6} fill={ok} stroke="none" /> All sources live</span>
-            <span>18 MAY 2026 · 08:47 EST</span>
-          </div>
+        <div style={{ maxWidth: 1400, margin: '0 auto', padding: '14px 28px', display: 'flex', alignItems: 'center' }}>
+          <img
+            src="/donoriq-logo.svg"
+            alt="DonorIQ"
+            style={{ height: 26, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }}
+          />
         </div>
       </div>
 
