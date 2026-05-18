@@ -555,11 +555,15 @@ export default function App() {
       <div style={{ background: ink, color: '#fff' }}>
         <div style={{ maxWidth: 1400, margin: '0 auto', padding: '14px 28px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, letterSpacing: '-0.01em', fontWeight: 500, display: 'flex', alignItems: 'baseline', gap: 10 }}>
-              <span style={{ letterSpacing: '0.02em' }}>DonorIQ</span>
-              <span style={{ color: goldLine }}>·</span>
-              <span style={{ fontStyle: 'italic', fontWeight: 400 }}>EM</span>
-              <span style={{ fontSize: 10, color: '#9BA8B8', fontFamily: 'JetBrains Mono, monospace', fontStyle: 'normal', letterSpacing: '0.1em', marginLeft: 4 }}>BY IGNITEC</span>
+            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 18, letterSpacing: '-0.01em', fontWeight: 500, display: 'flex', alignItems: 'center', gap: 10 }}>
+              <img
+                src="/donoriq-logo.svg"
+                alt="DonorIQ"
+                style={{ height: 26, width: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }}
+              />
+              <span style={{ color: goldLine, alignSelf: 'baseline' }}>·</span>
+              <span style={{ fontStyle: 'italic', fontWeight: 400, alignSelf: 'baseline' }}>EM</span>
+              <span style={{ fontSize: 10, color: '#9BA8B8', fontFamily: 'JetBrains Mono, monospace', fontStyle: 'normal', letterSpacing: '0.1em', marginLeft: 4, alignSelf: 'baseline' }}>BY IGNITEC</span>
             </div>
             <div style={{ height: 16, width: 1, background: '#ffffff22' }} />
             <div style={{ fontSize: 11, color: '#9BA8B8', fontFamily: 'JetBrains Mono, monospace', letterSpacing: '0.05em' }}>
